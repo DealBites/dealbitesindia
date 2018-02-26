@@ -11,12 +11,6 @@ from datetime import date,datetime,timedelta
 from dateutil.parser import parse
 import csv
 
-"""
-for x in range(0,10):
-    print(x, sep=' ', end='')  # No need for sep here, but okay :)
-    time.sleep(1)
-sh /mnt/informatica/data/script/inventory_files_download.sh
-"""
 prop_path = './credentials.property'
 fh = open(prop_path)
 dictionary = ast.literal_eval(fh.readline())
