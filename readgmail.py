@@ -145,8 +145,9 @@ def get_imap_session():
             # pip install lxml --user
             from bs4 import BeautifulSoup
             soup = BeautifulSoup(body, 'lxml')
-            soup_text=soup.get_text()
-            #print(soup_text)
+            soup_text=re.sub(r'=\n','\n',re.sub(r'=3D','=',re.sub(r'[\r]','\n',soup.get_text())))
+            # soup_text=soup.get_text()
+            # print(soup_text)
 
             parse_soup_text(soup_text, 'mailtext.csv')
 
